@@ -15,10 +15,10 @@ Install via pip
 (10) Optional if nvidia via pip: pip install torch --index-url https://download.pytorch.org/whl/cu126 --upgrade  
   
 Workarounds for tree_explainer:  
-(1) ExplainerError: The background dataset you provided does not cover all the leaves althought feature_perturbation="tree_path_dependent" and background dataset=None  
+(1)  ExplainerError: The background dataset you provided does not cover all the leaves althought feature_perturbation="tree_path_dependent" and background dataset=None  
 Open miniconda3\envs\iml\Lib\site-packages\shap\explainers\_tree.py  
-Add 'and self.data is not None:' in line 467 after 'if self.feature_perturbation == "tree_path_dependent"'  
-(2) Case n_classes and interactions: Only one set of interaction is provided, but not a seperate per class  
+Add 'and self.data is not None:' in line 483 after 'if self.feature_perturbation == "tree_path_dependent"'  
+(2)  Case n_classes and interactions: Only one set of interaction is provided, but not a seperate per class  
 Open miniconda3\envs\iml\Lib\site-packages\shap\explainers\_tree.py  
-Change 'if model.n_classes_ > 2:' to 'if model.n_classes_ >= 2:' in line 1336  
+Change 'if model.n_classes_ > 2:' to 'if model.n_classes_ >= 2:' in line 1415  
   
